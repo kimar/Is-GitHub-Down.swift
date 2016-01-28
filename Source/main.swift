@@ -4,12 +4,21 @@ import Glibc
 import Inquiline
 import Curassow
 import Safe
+import Zeal
 
 serve { _ in
   let result = Chan<HTTP.Response>()
-  http.get("http://www.google.com") { resp in
-    result <- resp
+
+  let client = HTTPClient(host: "www.apple.com", port: 80)
+  client.get("/") { result in
+      do {
+          let response = try result()
+          result <-response
+      } catch {
+          // something bad happened :(
+      }
   }
-  let response = <- result
+
+  let response = <-result
   return Response(.Ok, contentType: "text/plain", body: response.string)
 }
