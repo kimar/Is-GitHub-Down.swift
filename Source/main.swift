@@ -9,14 +9,15 @@ import Zeal
 serve { _ in
   let result = Chan<HTTP.Response>()
 
-  let client = HTTPClient(host: "www.apple.com", port: 80)
-  client.get("/") { result in
-      do {
-          let response = try result()
-          result <-response
-      } catch {
-          // something bad happened :(
-      }
+  HTTPClient(host: "github.com", port: 443)
+  .get("/") { result in
+    do {
+      let response = try result()
+      result <-response
+    } catch {
+      // something bad happened :(
+      // I mean really, really bad 🚀
+    }
   }
 
   let response = <-result
