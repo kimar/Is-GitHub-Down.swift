@@ -1,0 +1,9 @@
+import PackageDescription
+
+let package = Package(
+  name: "Is-GitHub-Down",
+  dependencies: [
+    .Package(url: "https://github.com/kylef/Curassow.git", majorVersion: 0, minor: 2),
+    .Package(url: "https://github.com/tidwall/Safe.git", majorVersion: 1, minor: 2)
+  ]
+)
