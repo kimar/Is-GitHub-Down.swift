@@ -5,6 +5,6 @@ let package = Package(
   dependencies: [
     .Package(url: "https://github.com/kylef/Curassow.git", majorVersion: 0, minor: 2),
     .Package(url: "https://github.com/tidwall/Safe.git", majorVersion: 1, minor: 2),
-    .Package(url: "https://github.com/interstateone/Zeal.git")
+    .Package(url: "https://github.com/interstateone/Zeal.git", majorVersion: 0, minor: 1)
   ]
 )
