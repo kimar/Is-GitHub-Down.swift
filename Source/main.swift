@@ -1,6 +1,3 @@
-@asmname("curl_easy_setopt") func curl_easy_setopt(curl: COpaquePointer, option: CURLoption, param: CString) -> CURLcode
-@asmname("curl_easy_setopt") func curl_easy_setopt(curl: COpaquePointer, option: CURLoption, param: CBool) -> CURLcode
-
 #if os(Linux)
 import Glibc
 #endif
