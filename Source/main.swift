@@ -5,7 +5,7 @@ import Inquiline
 import Curassow
 import CcURL
 
-func getHandle (url: String) -> AnyObject {
+func getHandle (url: String) -> UnsafeMutablePointer<Void> {
   let handle = curl_easy_init()
   curl_easy_setopt_string(handle, CURLOPT_URL, url)
   curl_easy_setopt_bool(handle, CURLOPT_VERBOSE, true)
