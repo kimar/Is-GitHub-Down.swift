@@ -6,8 +6,9 @@ import Curassow
 import CcURL
 
 serve { _ in
-  let url: CString = "https://github.com"
+  let url = "https://github.com"
 
+  let handle = curl_easy_init()
   curl_easy_setopt(handle, CURLOPT_URL, url)
   curl_easy_setopt(handle, CURLOPT_VERBOSE, true)
 
