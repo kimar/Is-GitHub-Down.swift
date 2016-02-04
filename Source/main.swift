@@ -14,6 +14,6 @@ func getHandle (url: String) -> UnsafeMutablePointer<Void> {
 
 serve { _ in
   return Response(.Ok, contentType: "text/plain", body:
-    curl_easy_perform(getHandle("https://github.com")) == CURLE_OK ? "✅" : "🚫"
+    curl_easy_perform(getHandle("https://github.com")) == CURLE_OK ? "NOPE, happy coding!" : "Unfortunately, yes :-("
   )
 }
