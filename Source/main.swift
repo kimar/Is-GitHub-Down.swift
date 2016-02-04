@@ -18,5 +18,5 @@ serve { _ in
   print("ret = \(ret)")
   print("error = \(error)")
 
-  return Response(.Ok, contentType: "text/plain", body: String.fromCString(ret))
+  return Response(.Ok, contentType: "text/plain", body: re == CURLE_OK ? "NOPE" : "AWYEAH")
 }
